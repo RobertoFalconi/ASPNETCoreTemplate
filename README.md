@@ -1,14 +1,19 @@
-# ASPNETCoreTemplate  
-ASP.NET Core Template with:  
-- .NET 6  
-- ASP.NET Core with Razor Pages pattern
+# ASP.NET Core TEMPLATE with:  
+- ASP.NET Core with MVC and Razor Pages patterns
+- .NET 6 with API Gateway and Minimal APIs patterns with System Text JSON usage
 - Docker  
-- Configured NuGet for:
-  - ASP.NET Core Identity for signup and login
-  - Entity Framework Core  
-- Configured libman for:  
+- Configured NuGet packages for:
+  - Entity Framework Core and Dapper
+  - Swashbuckle (Swagger)
+- Configured LibMan libraries for:  
   - Bootstrap 5
   - jQuery 3.6
   - jQuery Validate
   - jQuery Validation Unobtrusive
   - FontAwesome
+- Configured Program.cs with middlewares and pipelines usage for:
+  - Azure SQL Database
+  - Azure Functions
+  - Azure App Service
+  - Azure Container Registry
+  - Azure Key Vault
