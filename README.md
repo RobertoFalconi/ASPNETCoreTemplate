@@ -2,6 +2,7 @@
 - ASP.NET Core with MVC and Razor Pages patterns
 - .NET 6 with API Gateway and Minimal APIs patterns with System Text JSON usage
 - Docker  
+- Microsoft Service Worker for Progressive Web App support (app download and installation)
 - Configured NuGet packages for:
   - Entity Framework Core and Dapper
   - Swashbuckle (Swagger)
