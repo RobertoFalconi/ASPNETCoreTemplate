@@ -1,5 +1,5 @@
 # ASP.NET Core TEMPLATE with:  
-- ASP.NET Core with MVC and Razor Pages patterns
+- ASP.NET Core with Razor Pages pattern
 - .NET 6 with API Gateway and Minimal APIs patterns with System Text JSON usage
 - Docker  
 - Microsoft Service Worker for Progressive Web App support (app download and installation)
