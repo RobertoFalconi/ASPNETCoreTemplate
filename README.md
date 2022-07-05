@@ -17,7 +17,6 @@
   - Kestrel Web Server
   - HSTS
   - Azure SQL Database
-  - Azure Functions
   - Azure App Service
   - Azure Container Registry
   - Azure Key Vault
