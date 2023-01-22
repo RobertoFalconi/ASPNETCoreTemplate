@@ -6,27 +6,50 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddRazorPages();
+// Add loggers to the container.
+builder.Logging.AddJsonConsole();
 
+// Add configurations to the container.
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+// Add services to the container.
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+    builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+}
+else
+{
+    builder.Services.AddRazorPages();
+}
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddRoles<IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+
+// Add the app to the container.
 var app = builder.Build();
 
-app.UseMigrationsEndPoint();
-app.UseExceptionHandler("/Error");
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+    app.UseMigrationsEndPoint();
+}
+else
+{
+    app.UseExceptionHandler("/Error");
+}
 
 app.UseHsts();
 app.UseHttpsRedirection();
-
-app.UseStaticFiles();
-
-app.UseRouting();
-
 app.UseAuthentication();
+app.UseRouting();
 app.UseAuthorization();
-
+app.UseStaticFiles();
 app.MapRazorPages();
 
 app.Run();
