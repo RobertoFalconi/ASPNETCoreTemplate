@@ -1,22 +1,22 @@
-# ASP.NET Core TEMPLATE with:  
-- ASP.NET Core with Razor Pages pattern
-- ASP.NET Core Identity
-- .NET 6 with API Gateway and Minimal APIs patterns with System Text JSON usage
+# .NET 7 and ASP.NET Core TEMPLATE  
+
+.NET 7 and ASP.NET Core TEMPLATE with:  
+- Razor Pages pattern
+- Identity
 - Docker  
 - Microsoft Service Worker for Progressive Web App support (app download and installation)
-- Configured NuGet packages for:
+- NuGet packages:
   - Entity Framework Core and Dapper
   - Swashbuckle (Swagger)
-- Configured LibMan libraries for:  
-  - Bootstrap 5
+- LibMan libraries:  
+  - Bootstrap 5.3 with theme selection
+  - Bootstrap Icons
   - jQuery 3.6
   - jQuery Validate
   - jQuery Validation Unobtrusive
-  - FontAwesome
-- Configured Program.cs with middlewares and pipelines usage for:
-  - Kestrel Web Server
+- Program.cs middlewares and pipelines:  
   - HSTS
   - Azure SQL Database
   - Azure App Service
-  - Azure Container Registry
+  - Azure Container Registry, Istance and Webhook
   - Azure Key Vault
