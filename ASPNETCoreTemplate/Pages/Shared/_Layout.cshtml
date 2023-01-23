@@ -4,18 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ASPNETCoreTemplate</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/dist/font/bootstrap-icons.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ASPNETCoreTemplate.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/lib/font-awesome/css/fontawesome.min.css" asp-append-version="true" />
     <link href="manifest.json" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">ASPNETCoreTemplate</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -25,10 +24,39 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+                                <svg class="bi my-1 theme-icon-active" width="16" height="16"><use href="/lib/bootstrap-icons/dist/bootstrap-icons.svg#circle-half"></use></svg>
+                                <span class="d-lg-none ms-2"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light">
+                                        <svg class="bi me-2 opacity-50 theme-icon" width="16" height="16"><use href="/lib/bootstrap-icons/dist/bootstrap-icons.svg#sun-fill"></use></svg>
+                                        Light
+                                        <svg class="bi ms-auto d-none" width="16" height="16"><use href="check2"></use></svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                                        <svg class="bi me-2 opacity-50 theme-icon" width="16" height="16"><use href="/lib/bootstrap-icons/dist/bootstrap-icons.svg#moon-stars-fill"></use></svg>
+                                        Dark
+                                        <svg class="bi ms-auto d-none" width="16" height="16"><use href="#check2"></use></svg>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                                        <svg class="bi me-2 opacity-50 theme-icon" width="16" height="16"><use href="/lib/bootstrap-icons/dist/bootstrap-icons.svg#circle-half"></use></svg>
+                                        Auto
+                                        <svg class="bi ms-auto d-none" width="16" height="16"><use href="#check2"></use></svg>
+                                    </button>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -48,10 +76,8 @@
         </div>
     </footer>
 
-    <script src="~/lib/jquery/jquery.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validate/jquery.validate.min.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 
